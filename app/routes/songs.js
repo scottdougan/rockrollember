@@ -1,11 +1,10 @@
-// app/routes/application.js
+// app/routes/songs.js
 import Ember from 'ember';
 
 var Song = Ember.Object.extend({ title: '',
   band: '',
   rating: 0 
 });
-
 
 export default Ember.Route.extend({ 
   model: function() {
