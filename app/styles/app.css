@@ -47,6 +47,16 @@ color: #555;
 .new-song { 
   width: 50%;
 }
+
 .new-song-button { 
   margin-left: 20px;
+}
+
+.rating-panel {
+  float: right;
+}
+
+a.star-rating {
+  color: inherit; 
+  text-decoration: none;
 }
