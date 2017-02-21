@@ -46,13 +46,14 @@ export default Ember.Route.extend({
 
     return [ledZeppelin, pearlJam, fooFighters]; 
   },
-  
+
   actions: {
     createBand: function() {
       var name = this.get('controller').get('name'); 
       var band = Band.create({ name: name }); 
       this.modelFor('bands').pushObject(band); 
       this.get('controller').set('name', '');
+      this.transitionTo('bands.band.songs', band);
     } 
   }
 
