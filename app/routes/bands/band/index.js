@@ -1,12 +1,7 @@
-// app/routes/bands/band.js
+// app/routes/bands/band/index.js
 import Ember from 'ember';
 
-export default Ember.Route.extend({
-  model: function(params) {
-    var bands = this.modelFor('bands');
-    return bands.findBy('slug', params.slug); 
-  },
-
+export default Ember.Route.extend({ 
   afterModel: function(band) {
     var description = band.get('description'); 
     if (Ember.isEmpty(description)) {
@@ -14,5 +9,5 @@ export default Ember.Route.extend({
     } else {
       this.transitionTo('bands.band.details');
     }
-  }
+  } 
 });
