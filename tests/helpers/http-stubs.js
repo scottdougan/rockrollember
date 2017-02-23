@@ -39,6 +39,19 @@ export default {
     });
   },
 
+  stubBandId: function(pretender) {
+    pretender.get('/bands/:id', function(request) {
+      var tempBand = {
+        attributes: {
+          title: 'Something Random',
+          rating: 5
+        }
+      };
+      var response = responseItemForBand(tempBand, request.params.id);
+      return [200, {'Content-Type': 'application/vnd.api+json'}, JSON.stringify({ data: response }) ];
+    });
+  },
+
   stubSongs: function(pretender, bandId, data) {
     var response = data.map(function(song) {
       return responseItemForSong(song);
